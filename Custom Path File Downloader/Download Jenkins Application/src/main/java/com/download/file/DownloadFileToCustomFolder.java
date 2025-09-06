@@ -3,6 +3,7 @@ package com.download.file;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -39,10 +40,28 @@ public class DownloadFileToCustomFolder {
 		
 		WebDriver wd = new ChromeDriver(chromeOptions);
 		wd.get("https://get.jenkins.io/war-stable/2.516.2/jenkins.war");
-
-
+		
+		
+		String expectedFile = "jenkins.war";
+		//Check if the file has been successfully downloaded.
+		File jenkinsFile = new File(jenkinsDownloadDir,expectedFile);
+		int elapsedTime = 0;
+		int maxWaitTime = 30;
+		System.out.println(" Waiting for the Jenkins file to be downloaded .... ");
+		
+		while(maxWaitTime > elapsedTime && !jenkinsFile.exists()) {
+			elapsedTime ++;
+			Thread.sleep(1000);
+		}
+		
+		if (maxWaitTime > elapsedTime)
+			System.out.println(" Jenkins application file : '"+ expectedFile +"' was successfully downloaded in "+ elapsedTime + " seconds!");
+		else
+			System.err.println(" Jenkins application file : '"+ expectedFile +"' could not be downloaded in "+ maxWaitTime + " seconds!");
+	   
+		Thread.sleep(5);
+		wd.quit();
 	}
-
 }
 
 
