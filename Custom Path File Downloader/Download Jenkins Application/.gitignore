@@ -1,0 +1,25 @@
+# Maven target folder (compiled classes, reports, jars, runtime downloads)
+target/
+
+# Eclipse/IDE specific files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Node/JS artifacts (if Playwright or JS tools are added later)
+node_modules/
+dist/
+
+# Runtime download folder (moved inside target)
+/target/downloads/
