@@ -1,0 +1,31 @@
+Custom Path: Jenkins File Downloader
+
+## 📌 Overview
+This project demonstrates how to use **Selenium WebDriver with ChromeOptions** to automatically download files to a custom path.  
+The example specifically downloads the **Jenkins WAR file** (`jenkins.war`) into a user-defined folder (`Jenkins Download`).
+
+---
+
+## ⚙️ Features
+- Creates a **machine-independent download directory** (`Jenkins Download`).
+- Configures Chrome browser preferences to:
+  - Set a custom download path.
+  - Disable download prompts.
+- Automates the download of `jenkins.war` from the Jenkins official site.
+- Validates whether the file has been downloaded successfully within a given wait time.
+
+---
+
+## 🛠️ Tech Stack
+- Java  
+- Selenium WebDriver  
+- ChromeDriver  
+
+---
+
+## 🚀 How It Works
+1. Creates a folder named `Jenkins Download` in the project directory.  
+2. Configures ChromeOptions to set the download path.  
+3. Launches Chrome and navigates to the Jenkins WAR file URL.  
+4. Waits until the file `jenkins.war` is downloaded or timeout occurs.  
+5. Prints the result in the console.  
