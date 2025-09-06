@@ -14,7 +14,8 @@ public class DownloadFileToCustomFolder {
 		
 		String userDirectory = System.getProperty("user.dir");
 		
-		String downloadFolderPath = userDirectory + "\\Jenkins Download";
+		// File Separator ensures that the path is now machine independent!
+		String downloadFolderPath = userDirectory + File.separator + "Jenkins Download";
 		
 		File jenkinsDownloadDir = new File(downloadFolderPath);
 		
